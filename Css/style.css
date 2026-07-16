@@ -1,0 +1,463 @@
+/* ==========================================================================
+   1. إعدادات التصميم العامة والألوان (Variables)
+   ========================================================================== */
+:root {
+  --bg-main: #f9ece9;          /* لون الخلفية العامة الفاتح جداً */
+  --bg-card-light: #fae4e1;    /* لون الكروت الفاتح */
+  --bg-card-dark: #e19999;     /* لون الكارت الوردي الغامق (Listen Now) */
+  --color-text-dark: #1a1a1a;  /* لون النصوص الداكنة */
+  --color-text-muted: #bc7c7c; /* لون النصوص الوردية الفرعية */
+  --color-white: #ffffff;      /* اللون الأبيض للتباين */
+  --border-radius: 18px;       /* انحناء حواف الكروت */
+  --transition-speed: 0.3s;    /* سرعة التأثيرات الحركية */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--bg-main);
+  color: var(--color-text-dark);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* الحاوية الرئيسية للتصميم لضمان التناسق والمقاسات */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* ==========================================================================
+   2. شريط التنقل العلوي (Header & Navigation)
+   ========================================================================== */
+header {
+  background-color: var(--bg-card-light);
+  border-radius: var(--border-radius);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  font-family: 'Playfair Display SC', serif;
+  font-size: 28px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.logo-icon {
+  font-size: 24px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--color-text-dark);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  padding-bottom: 5px;
+  position: relative;
+  transition: color var(--transition-speed);
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: var(--color-text-muted);
+}
+
+/* خط كلاسيكي تحت الرابط النشط */
+nav ul li a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   3. نظام الشبكة لتوزيع العناصر (CSS Grid)
+   ========================================================================== */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.1fr; /* تقسيم العرض لثلاثة أعمدة متناسقة */
+  grid-template-rows: auto auto;        /* صفين رئيسيين */
+  gap: 25px;
+}
+
+/* ==========================================================================
+   4. تنسيق الكروت الفردية
+   ========================================================================== */
+
+/* --- كارت الهيرو (أعلى اليسار) --- */
+.hero {
+  background-color: var(--bg-card-light);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.rose-decor {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-size: 55px;
+  opacity: 0.15;
+  transform: rotate(15deg);
+}
+
+.hero .rose {
+  font-family: 'Playfair Display', serif;
+  font-size: 100px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  line-height: 1;
+  margin-bottom: 15px;
+  margin-right: 50px;
+}
+
+.hero .job {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.hero .sparkle {
+  font-size: 18px;
+  color: var(--color-text-muted);
+  margin-bottom: 25px;
+}
+
+.hero .quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: #4a4a4a;
+}
+
+/* --- كارت الصورة الوسطى --- */
+.image {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  height: 480px; /* طول متناسق مع باقي الكروت المجاورة */
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- كارت الأغاني (أحدث الأعمال - اليمين) --- */
+.song {
+  background-color: var(--bg-card-light);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.song-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.song h2 {
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: var(--color-text-muted);
+  font-weight: 700;
+}
+
+.music-top-icon {
+  font-size: 18px;
+  color: var(--color-text-muted);
+}
+
+.song-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.song-item {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 12px 15px;
+  border-radius: 12px;
+  gap: 15px;
+  position: relative;
+  transition: transform var(--transition-speed);
+}
+
+.song-item:hover {
+  transform: translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.song-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.song-info {
+  flex-grow: 1;
+}
+
+.song-info h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.song-info p {
+  font-size: 11px;
+  color: #777;
+}
+
+.play-item-btn {
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  font-size: 12px;
+  padding: 8px;
+  transition: color var(--transition-speed);
+}
+
+.play-item-btn:hover {
+  color: var(--color-text-dark);
+}
+
+/* --- كارت من هي روز (أسفل اليسار) --- */
+.about {
+  background-color: var(--bg-card-light);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.about-decor {
+  font-size: 22px;
+  color: var(--color-text-muted);
+  padding-top: 5px;
+}
+
+.about-content h2 {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: var(--color-text-muted);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.about-content p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #000000;
+  font-weight: 450;
+}
+
+/* --- كارت الاستماع الوردي (أسفل المنتصف) --- */
+.listen {
+  background-color: var(--bg-card-dark);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* أنيميشن بسيط ومميز لشكل موجة الصوت في الأعلى */
+.audio-wave {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 15px;
+  height: 20px;
+}
+
+.audio-wave span {
+  display: block;
+  width: 3px;
+  background-color: var(--color-white);
+  border-radius: 3px;
+}
+.audio-wave span:nth-child(1) { height: 8px; }
+.audio-wave span:nth-child(2) { height: 16px; }
+.audio-wave span:nth-child(3) { height: 12px; }
+.audio-wave span:nth-child(4) { height: 18px; }
+.audio-wave span:nth-child(5) { height: 10px; }
+
+.listen h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.listen p {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.play-main-btn {
+  background: transparent;
+  border: 1px solid var(--color-white);
+  color: var(--color-white);
+  width: 70px;
+  height: 32px;
+  border-radius: 20px;
+  font-size: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all var(--transition-speed);
+}
+
+.play-main-btn:hover {
+  background-color: var(--color-white);
+  color: var(--bg-card-dark);
+}
+
+/* --- كارت التواصل الاجتماعي (أسفل اليمين) --- */
+.social {
+  background-color: var(--bg-card-light);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social h2 {
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: var(--color-text-muted);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  gap: 15px;
+}
+
+.social-card {
+  text-decoration: none;
+  color: var(--color-text-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: transform var(--transition-speed);
+}
+
+.social-card:hover {
+  transform: translateY(-3px);
+}
+
+.icon-wrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-white);
+  font-size: 20px;
+  background-color: var(--color-text-muted); /* لون افتراضي دافئ للأيقونات الدائرية ليتناسب مع الباستيل */
+  transition: background-color var(--transition-speed);
+}
+
+.social-card span {
+  font-size: 11px;
+  font-weight: 500;
+  color: #555;
+}
+
+/* ==========================================================================
+   5. ملاءمة التصميم للشاشات الصغيرة (Responsive Design)
+   ========================================================================== */
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr 1fr; /* تحويل الأعمدة إلى عمودين عند صغر الشاشة */
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 20px 10px;
+  }
+  
+  header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  nav ul {
+    gap: 15px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr; /* عمود واحد كامل للشاشات الصغيرة جداً كالهواتف */
+  }
+
+  .image {
+    height: 350px;
+  }
+}

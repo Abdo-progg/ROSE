@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- إضافة خطوط جوجل المستخدمة في التصميم الأصلي (خط Serif فخم وخط Sans حديث وخط مائل للعبارات) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display+SC:wght@700&display=swap" rel="stylesheet">
+  <!-- مكتبة FontAwesome للأيقونات -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./Css/style.css">
+  <title>Rose</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo-area">
+        <h1 class="logo">ROSÉ</h1>
+        <!-- أيقونة الوردة بجانب اللوجو -->
+        <span class="logo-icon">🌹</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#" class="active">HOME</a></li>
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">MUSIC</a></li>
+          <li><a href="#">GALLERY</a></li>
+          <li><a href="#">CONTACT</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main class="grid">
+      <!-- HERO (المربع الكبير أعلى اليسار) -->
+      <div class="hero">
+        <!-- الوردة الزخرفية في الزاوية -->
+        <div class="rose-decor">🌹</div>
+        <h1 class="rose">ROSÉ</h1>
+        <p class="job">SINGER • SONGWRITER • PERFORMER</p>
+        <hr>
+        <div class="sparkle">✦</div>
+        <p class="quote">Voice of emotion and elegance</p>
+      </div>
+
+      <!-- IMAGE -->
+      <div class="image">
+        <img src="./img/rose.PNG" alt="Rosé">
+      </div>
+
+      <!-- SONGS -->
+      <div class="song">
+        <div class="song-header">
+          <h2>LATEST RELEASES</h2>
+          <i class="fa-solid fa-music music-top-icon"></i>
+        </div>
+        
+        <div class="song-list">
+          <div class="song-item">
+            <img src="./img/3am.jpg" alt="APT.">
+            <div class="song-info">
+              <h3>3-am</h3>
+              <p>2024</p>
+            </div>
+            <button class="play-item-btn"><i class="fa-solid fa-play"></i></button>
+          </div>
+          
+          <div class="song-item">
+            <img src="./img/dance all night.jpg" alt="toxic till the end">
+            <div class="song-info">
+              <h3>Dance all night</h3>
+              <p>2024</p>
+            </div>
+            <button class="play-item-btn"><i class="fa-solid fa-play"></i></button>
+          </div>
+          
+          <div class="song-item">
+            <img src="./img/stay a little longer.jpg" alt="number one girl">
+            <div class="song-info">
+              <h3>stay a little longer</h3>
+              <p>2024</p>
+            </div>
+            <button class="play-item-btn"><i class="fa-solid fa-play"></i></button>
+          </div>
+          
+          <div class="song-item">
+            <img src="./img/hard to love.jpg" alt="On The Ground">
+            <div class="song-info">
+              <h3>Hard to love</h3>
+              <p>2022</p>
+            </div>
+            <button class="play-item-btn"><i class="fa-solid fa-play"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ABOUT -->
+      <div class="about">
+        <div class="about-decor">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+        </div>
+        <div class="about-content">
+          <h2>ABOUT ROSÉ</h2>
+          <p>
+            Rosé is a South Korean–New Zealand singer
+            and member of BLACKPINK. Known for her
+            unique vocal tone and emotional songwriting,
+            she continues to inspire millions around
+            the world.
+          </p>
+        </div>
+      </div>
+
+      <!-- LISTEN (المربع الوردي الكبير أسفل المنتصف) -->
+      <div class="listen">
+        <!-- رمز الذبذبات الصوتية في الأعلى -->
+        <div class="audio-wave">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <h2>Listen Now</h2>
+        <p>DISCOVER ROSÉ'S MUSIC</p>
+        <button class="play-main-btn">
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- SOCIAL (المربع الصغير أسفل اليمين) -->
+      <div class="social">
+        <h2>FOLLOW ROSÉ</h2>
+        <div class="social-links">
+          <a href="https://www.instagram.com/roses_are_rosie/" class="social-card" target="_blank">
+            <div class="icon-wrapper instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.youtube.com/@roses_are_rosie" class="social-card" target="_blank">
+            <div class="icon-wrapper youtube">
+              <i class="fa-brands fa-youtube"></i>
+            </div>
+            <span>YouTube</span>
+          </a>
+          <a href="https://open.spotify.com/artist/3eVa5w3URK5duf6eyVDbu9" class="social-card" target="_blank">
+            <div class="icon-wrapper spotify">
+              <i class="fa-brands fa-spotify"></i>
+            </div>
+            <span>Spotify</span>
+          </a>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
